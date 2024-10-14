@@ -1,0 +1,10 @@
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"200\",\"responseTime\":\"1.480\"}","timestamp":"2024-10-13T07:05:09.066Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"200\",\"responseTime\":\"66.713\"}","timestamp":"2024-10-13T08:29:57.020Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"200\",\"responseTime\":\"12.489\"}","timestamp":"2024-10-13T08:44:24.218Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"200\",\"responseTime\":\"12.269\"}","timestamp":"2024-10-13T10:29:18.474Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"404\",\"responseTime\":\"2.001\"}","timestamp":"2024-10-13T10:59:42.309Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"404\",\"responseTime\":\"2.219\"}","timestamp":"2024-10-13T11:01:22.297Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/login\",\"status\":\"400\",\"responseTime\":\"1.305\"}","timestamp":"2024-10-13T11:01:29.521Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/login\",\"status\":\"200\",\"responseTime\":\"0.345\"}","timestamp":"2024-10-13T11:01:55.620Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/login\",\"status\":\"200\",\"responseTime\":\"1.143\"}","timestamp":"2024-10-14T05:03:37.798Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/login\",\"status\":\"400\",\"responseTime\":\"6.612\"}","timestamp":"2024-10-14T05:03:52.135Z"}
