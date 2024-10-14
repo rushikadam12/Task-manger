@@ -1,20 +1,15 @@
 import { NextFunction } from "express";
+import { ErrorResponse } from "../utils/ErrorClass";
+import { createPasswordHash } from "../../prisma/userServices";
+import { asyncHandler } from "../utils/asyncHandler";
 
-export const Login = async (
-  req: any,
-  res: any,
-  next: NextFunction
-) => {
-  try {
+export const Login = asyncHandler(
+  async (req: any, res: any, next?: NextFunction) => {
     const { email, password } = req.body;
-    if (!email || !password) {
-      const error = new Error("Please provide both email and password");
-      (error as any).status = 400; // Set a custom status for the error
-      throw error;
+    if(!email||!password){
+      throw new ErrorResponse([],401,"pls pass the email and password",new Error().stack)
     }
-
-    return res.status(200).json({ email, password });
-  } catch (error) {
-    next(error);
+    const hash = await createPasswordHash(password);
+      
   }
-};
+);

@@ -13,6 +13,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+
 model User {
   user_id  String @id @default(uuid()) @db.Uuid
   email    String @unique
@@ -37,3 +38,5 @@ model Task {
   category         Category @relation(fields: [category_task_id], references: [category_id])
   category_task_id String
 }
+
+
