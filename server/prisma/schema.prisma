@@ -13,11 +13,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model User {
   user_id  String @id @default(uuid()) @db.Uuid
   email    String @unique
-  name     String
+  username String
   password String
   tasks    Task[]
 }
@@ -25,18 +24,17 @@ model User {
 model Category {
   category_id String @id @default(uuid()) @db.Uuid
   type        String
-  task        Task[]
+  tasks       Task[]
 }
 
 model Task {
   task_id          String   @id @default(uuid()) @db.Uuid
-  user             User     @relation(fields: [user_id], references: [user_id])
-  user_id          String
+  currentUser_id   String   @db.Uuid
+  user             User     @relation(fields: [currentUser_id], references: [user_id])
   title            String
   description      String
   due_date         DateTime
+  category_task_id String   @db.Uuid
   category         Category @relation(fields: [category_task_id], references: [category_id])
-  category_task_id String
+  
 }
-
-

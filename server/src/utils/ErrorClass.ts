@@ -8,12 +8,10 @@ export class ErrorResponse extends Error {
     message = "something went wrong",
     stack = ""
   ) {
-    
     super(message);
     (this.error = error), (this.status = status), (this.message = message);
     if (stack) {
       this.stack = stack;
-
     } else {
       Error.captureStackTrace(this, this.constructor);
     }
