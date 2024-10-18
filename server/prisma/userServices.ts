@@ -15,7 +15,5 @@ export async function isPasswordCorrect(
   inComingPassword: string,
   userPassword: string
 ) {
-  // TODO:create the accessToken and refreshToken
-  // const checkPassword: string = await bcrypt.hash(inComingPassword, 10);
   return await bcrypt.compare(inComingPassword, userPassword);
 }
