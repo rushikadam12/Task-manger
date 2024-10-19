@@ -4,16 +4,19 @@ import logger from "./logger";
 import morgan from "morgan";
 import prisma from "./prisma/migrations/connect";
 import bodyParser from "body-parser";
-import loginRoute from "./src/routes/login.routes.";
 import { ErrorHandler } from "./src/utils/ErrorHandler";
 import cookieParser from 'cookie-parser'
 dotenv.config();
 
+// routes
+import loginRoute from "./src/routes/login.routes.";
+import taskRoutes from "./src/routes/task.route"
+
 const app = express();
+
 
 app.use(bodyParser.json());
 app.use(express.json());
-// Use cookie-parser middleware
 app.use(cookieParser());
 
 // morgan
@@ -36,7 +39,8 @@ app.use(
 
 // routes
 app.use("/", loginRoute);
-
+app.use("/",taskRoutes)
+  
 // global error handler
 app.use(ErrorHandler);
 
