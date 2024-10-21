@@ -24,17 +24,17 @@ model User {
 model Category {
   category_id String @id @default(uuid()) @db.Uuid
   type        String @unique
-  tasks       Task[]
+  tasks       Task[] 
 }
 
 model Task {
   task_id          String   @id @default(uuid()) @db.Uuid
   currentUser_id   String   @db.Uuid
-  user             User     @relation(fields: [currentUser_id], references: [user_id])
+  user             User     @relation(fields: [currentUser_id], references: [user_id],onDelete: Cascade)
   title            String
   description      String
   due_date         DateTime
   category_task_id String   @db.Uuid
-  category         Category @relation(fields: [category_task_id], references: [category_id])
+  category         Category @relation(fields: [category_task_id], references: [category_id],onDelete: Cascade)
   
 }

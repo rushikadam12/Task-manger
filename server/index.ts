@@ -5,18 +5,17 @@ import morgan from "morgan";
 import prisma from "./prisma/migrations/connect";
 import bodyParser from "body-parser";
 import { ErrorHandler } from "./src/utils/ErrorHandler";
-import cookieParser from 'cookie-parser'
+import cookieParser from "cookie-parser";
 dotenv.config();
 
 // routes
 import loginRoute from "./src/routes/login.routes.";
-import taskRoutes from "./src/routes/task.route"
+import taskRoutes from "./src/routes/task.route";
 
 const app = express();
 
-
-app.use(bodyParser.json());
 app.use(express.json());
+app.use(bodyParser.json());
 app.use(cookieParser());
 
 // morgan
@@ -39,8 +38,8 @@ app.use(
 
 // routes
 app.use("/", loginRoute);
-app.use("/",taskRoutes)
-  
+app.use("/", taskRoutes);
+
 // global error handler
 app.use(ErrorHandler);
 

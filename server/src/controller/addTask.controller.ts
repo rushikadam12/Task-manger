@@ -1,12 +1,13 @@
 import prisma from "../../prisma/migrations/connect";
 import { asyncHandler } from "../utils/asyncHandler";
 
-interface InterfaceAddTaskBody{
+export interface InterfaceAddTaskBody{
 title:string;
 category_type:string;
 description:string;
 due_date:Date;
 }
+
 export const addUserTask = asyncHandler(async (req, res) => {
 //   title
 // description
@@ -39,6 +40,7 @@ const newTask=await prisma.task.create({
         
     }
 })
+// TODO:error handling and Zod validation
 
 
   return res.status(200).json({ newTask });

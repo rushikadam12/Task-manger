@@ -22,7 +22,7 @@ export const AuthenticateUser = async (
 ) => {
   try {
     const { accessToken, refreshToken } = req.cookies;
-    
+
     if (!accessToken || !refreshToken) {
       throw new ErrorResponse([], 401, "unauthorized access");
     }
@@ -30,11 +30,10 @@ export const AuthenticateUser = async (
       accessToken,
       "process.env.JWT_KEY"
     )) as jwt.JwtPayload;
-    console.log(result)
     if (!result) {
       throw new ErrorResponse([], 401, "token expired");
     }
-    req.user = result
+    req.user = result;
     next();
   } catch (error) {
     next(error);

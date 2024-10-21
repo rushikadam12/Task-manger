@@ -1,9 +1,11 @@
+import { any } from "zod";
+import { z, ZodError } from "zod";
 export class ErrorResponse extends Error {
   error: any;
   status: number;
   message: string;
   constructor(
-    error = [],
+    error = [z.ZodError||any],
     status = 500,
     message = "something went wrong",
     stack = ""
